@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,20 +13,34 @@ namespace CPRG214.Marina.Data
     {
       using (var db = new MarinaEntities())
       {
-        // SELECT * FROM Slip WHERE slip.ID NOT IN (SELECT SlipID FROM Lease)
-        var slips = (from s in (from s in db.Slips
-                                where !(from l in db.Leases
-                                        select l.SlipID)
-                                        .Contains(s.ID)
-                                select s)
-                     where s.DockID == dockID
-                     select new SlipDTO
-                     {
-                       ID = s.ID,
-                       Summary = $"ID: {s.ID} | Dimensions {s.Length}x{s.Width}"
-                     }).ToList();
+        //var slips2 = (from s in db.Slips
+        //              where !(from l in db.Leases
+        //                      select l.SlipID)
+        //                      .Contains(s.ID)
+        //              select s);
 
-        return slips;
+        //// SELECT * FROM Slip WHERE slip.ID NOT IN (SELECT SlipID FROM Lease)
+        //var slips = (from s in slips2
+        //             where s.DockID == dockID
+        //             select new SlipDTO
+        //             {
+        //               ID = s.ID,
+        //               Length = s.Length.ToString(),
+        //               Width = s.Width.ToString(),
+        //               Summary = $"ID: {s.ID} | Dimensions {s.Length}x{s.Width}"
+        //             }).ToList();
+        var availableSlips = db.Slips.Where(s => s.Leases.Count == 0 && s.DockID == dockID).ToList();
+
+        List<SlipDTO> dto = (from s in availableSlips
+                   select new SlipDTO
+                   {
+                     ID = s.ID,
+                     Length = s.Length.ToString(),
+                     Width = s.Width.ToString(),
+                     Summary = $"ID: {s.ID} - Dimensions {s.Length}x{s.Width}"
+                   }).ToList();
+
+        return dto;
       }
     }
 
