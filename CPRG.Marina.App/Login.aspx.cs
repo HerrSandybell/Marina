@@ -28,7 +28,7 @@ namespace CPRG.Marina.App
         return;
       }
 
-      Session.Add("FullName", customer.ID);
+      Session.Add("CustomerID", customer.ID);
       FormsAuthentication.RedirectFromLoginPage(customer.FullName, false);
     }
   }

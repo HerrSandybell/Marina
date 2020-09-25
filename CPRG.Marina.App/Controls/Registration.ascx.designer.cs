@@ -7,38 +7,56 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CPRG.Marina.App
+namespace CPRG.Marina.App.Controls
 {
 
 
-  public partial class SiteMaster
+  public partial class Registration1
   {
 
     /// <summary>
-    /// uxWelcome control.
+    /// uxFirstName control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl uxWelcome;
+    protected global::System.Web.UI.WebControls.TextBox uxFirstName;
 
     /// <summary>
-    /// uxLogin control.
+    /// uxLastName control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlAnchor uxLogin;
+    protected global::System.Web.UI.WebControls.TextBox uxLastName;
 
     /// <summary>
-    /// MainContent control.
+    /// uxCity control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+    protected global::System.Web.UI.WebControls.TextBox uxCity;
+
+    /// <summary>
+    /// uxPhone control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.TextBox uxPhone;
+
+    /// <summary>
+    /// uxSubmit control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button uxSubmit;
   }
 }

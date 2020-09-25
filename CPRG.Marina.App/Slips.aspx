@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Slips.aspx.cs" Inherits="CPRG.Marina.App.Slips" %>
 <%@ Register src="Controls/DockSelector.ascx" tagname="DockSelector" tagprefix="uc1" %>
-<%@ Register src="Controls/SelectDock.ascx" tagname="SelectDock" tagprefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Select Dock:</h3> 
   <uc1:DockSelector ID="DockSelector1" runat="server" AllowPostBack="True" />
