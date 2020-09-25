@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Slips.aspx.cs" Inherits="CPRG.Marina.App.Slips" %>
+<%@ Register src="Controls/DockSelector.ascx" tagname="DockSelector" tagprefix="uc1" %>
+<%@ Register src="Controls/SelectDock.ascx" tagname="SelectDock" tagprefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Select Dock:</h3> 
-    <asp:DropDownList ID="uxDocks" runat="server" Height="50px" OnSelectedIndexChanged="uxDocks_SelectedIndexChanged" Width="281px">
-    </asp:DropDownList>
-    <br />
+  <uc1:DockSelector ID="DockSelector1" runat="server" AllowPostBack="True" />
+<br />
   <br />
   <table>
     <tr>

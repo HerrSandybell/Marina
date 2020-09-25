@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CPRG.Marina.App._Default" %>
 
+<%@ Register Src="~/Controls/DockSelector.ascx" TagPrefix="uc1" TagName="DockSelector" %>
+
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
@@ -7,8 +10,6 @@
         <p class="lead">Your premier Inland Lake boating destination!</p>
         <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Register now! &raquo;</a></p>
     </div>
-
-
 
     <div class="container">
       <div class="row">

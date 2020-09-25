@@ -21,10 +21,7 @@ namespace CPRG214.Marina.Data
         dto = new CustomerDTO
         {
           ID = cust.ID,
-          FirstName = cust.FirstName,
-          LastName = cust.LastName,
-          City = cust.City,
-          Phone = cust.Phone
+          FullName = $"{cust.FirstName} {cust.LastName}"
         };
       }
 

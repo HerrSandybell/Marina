@@ -7,29 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CPRG.Marina.App
+namespace CPRG.Marina.App.Controls
 {
 
 
-  public partial class SiteMaster
+  public partial class DockSelector
   {
 
     /// <summary>
-    /// uxWelcome control.
+    /// uxDocks control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl uxWelcome;
-
-    /// <summary>
-    /// MainContent control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+    protected global::System.Web.UI.WebControls.DropDownList uxDocks;
   }
 }

@@ -1,4 +1,5 @@
-﻿using CPRG214.Marina.Data;
+﻿using CPRG.Marina.App.Controls;
+using CPRG214.Marina.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,35 +14,27 @@ namespace CPRG.Marina.App
     readonly MarinaManager mgr = new MarinaManager();
     protected void Page_Load(object sender, EventArgs e)
     {
-      if (!IsPostBack)
-      {
-        uxDocks.DataSource = mgr.GetDocks();
-        uxDocks.DataTextField = "Name";
-        uxDocks.DataValueField = "ID";
-        uxDocks.DataBind();
-        uxDocks.SelectedIndex = 0;
-        uxDocks_SelectedIndexChanged(sender, e);
-      }
+      DockSelector1.DockSelect += DockSelector1_DockSelect1;
     }
 
-    protected void uxDocks_SelectedIndexChanged(object sender, EventArgs e)
+    private void DockSelector1_DockSelect1(object sender, DockEventArgs e)
     {
-      var dock = mgr.GetSingleDock(Convert.ToInt32(uxDocks.SelectedValue));
-      var slips = mgr.GetNonleasedSlipsByDock(dock.ID);
-
-      if (dock.WaterService)
+      //var dock = mgr.GetSingleDock(Convert.ToInt32(DockSelector1.SelectedValue));
+      if (e.wService)
         uxWater.Text = "Available";
       else
         uxWater.Text = "Unavailable";
-      if (dock.ElectricalService)
+      if (e.eService)
         uxElectric.Text = "Available";
       else
         uxElectric.Text = "Unavailable";
+
+      var slips = mgr.GetNonleasedSlipsByDock(e.ID);
       uxSlipCount.Text = slips.Count().ToString();
       uxSlips.DataSource = slips;
       uxSlips.DataTextField = "Summary";
       uxSlips.DataValueField = "ID";
-      DataBind();
+      uxSlips.DataBind();
     }
   }
 }

@@ -11,52 +11,43 @@ namespace CPRG.Marina.App
 {
 
 
-  public partial class Slips
+  public partial class Login
   {
 
     /// <summary>
-    /// DockSelector1 control.
+    /// uxFirstname control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::CPRG.Marina.App.Controls.DockSelector DockSelector1;
+    protected global::System.Web.UI.WebControls.TextBox uxFirstname;
 
     /// <summary>
-    /// uxWater control.
+    /// uxLastName control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label uxWater;
+    protected global::System.Web.UI.WebControls.TextBox uxLastName;
 
     /// <summary>
-    /// uxElectric control.
+    /// uxAuthenticate control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label uxElectric;
+    protected global::System.Web.UI.WebControls.Button uxAuthenticate;
 
     /// <summary>
-    /// uxSlipCount control.
+    /// uxMessage control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label uxSlipCount;
-
-    /// <summary>
-    /// uxSlips control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.DropDownList uxSlips;
+    protected global::System.Web.UI.WebControls.Label uxMessage;
   }
 }
