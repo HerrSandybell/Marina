@@ -30,3 +30,10 @@ textarea {
     }
 }
 
+.navbar-dark, .bg-dark {
+  background: dodgerblue;
+}
+
+.navbar-light {
+  color: white;
+}

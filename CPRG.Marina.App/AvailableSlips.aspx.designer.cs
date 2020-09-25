@@ -11,52 +11,34 @@ namespace CPRG.Marina.App
 {
 
 
-  public partial class SiteMaster
+  public partial class AvailableSlips
   {
 
     /// <summary>
-    /// uxLeaseSlip control.
+    /// DockSelector control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlAnchor uxLeaseSlip;
+    protected global::CPRG.Marina.App.Controls.DockSelector DockSelector;
 
     /// <summary>
-    /// uxWelcome control.
+    /// uxSlipGrid control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl uxWelcome;
+    protected global::System.Web.UI.WebControls.GridView uxSlipGrid;
 
     /// <summary>
-    /// uxRegistration control.
+    /// uxSlipSource control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlAnchor uxRegistration;
-
-    /// <summary>
-    /// uxLogin control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlAnchor uxLogin;
-
-    /// <summary>
-    /// MainContent control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+    protected global::System.Web.UI.WebControls.ObjectDataSource uxSlipSource;
   }
 }

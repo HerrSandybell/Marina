@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,12 +16,20 @@ namespace CPRG.Marina.App
       if (Context.User.Identity.IsAuthenticated)
       {
         uxWelcome.InnerText = $"Welcome {Context.User.Identity.Name}";
-        uxLogin.InnerHtml = "<span class='fa fa-sign-out-alt'>";
+        uxLogin.InnerHtml = "Sign Out";
+        uxRegistration.InnerText = "View Profile";
+        uxRegistration.HRef = "/Secure/UpdateCustomer";
+        uxLeaseSlip.Attributes["class"] = "nav-link";
+        uxLeaseSlip.Attributes["aria-disabled"] = "false";
       }
       else
       {
         uxWelcome.InnerText = string.Empty;
-        uxLogin.InnerHtml = "<span class='fa fa-sign-in-alt'>";
+        uxLogin.InnerHtml = "Sign In";
+        uxRegistration.InnerText = "Registration";
+        uxRegistration.HRef = "/Registration";
+        uxLeaseSlip.Attributes["class"] = "nav-link disabled";
+        uxLeaseSlip.Attributes["aria-disabled"] = "true";
       }
     }
     protected void HandleLoginClick(object sender, EventArgs e)

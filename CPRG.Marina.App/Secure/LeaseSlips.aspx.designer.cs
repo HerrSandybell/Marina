@@ -15,13 +15,13 @@ namespace CPRG.Marina.App
   {
 
     /// <summary>
-    /// DockSelector1 control.
+    /// DockSelector control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::CPRG.Marina.App.Controls.DockSelector DockSelector1;
+    protected global::CPRG.Marina.App.Controls.DockSelector DockSelector;
 
     /// <summary>
     /// uxWater control.

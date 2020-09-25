@@ -29,7 +29,7 @@ namespace CPRG.Marina.App.Controls
         uxDocks.DataTextField = "Name";
         uxDocks.DataValueField = "ID";
         uxDocks.DataBind();
-        uxDocks.SelectedIndex = 2;
+        uxDocks.SelectedIndex = 0;
         uxDocks_SelectedIndexChanged(this, e);
       }
     }

@@ -14,10 +14,10 @@ namespace CPRG.Marina.App
     readonly MarinaManager mgr = new MarinaManager();
     protected void Page_Load(object sender, EventArgs e)
     {
-      DockSelector1.DockSelect += DockSelector1_DockSelect1;
+      DockSelector.DockSelect += DockSelector_DockSelect;
     }
 
-    private void DockSelector1_DockSelect1(object sender, DockEventArgs e)
+    private void DockSelector_DockSelect(object sender, DockEventArgs e)
     {
       //var dock = mgr.GetSingleDock(Convert.ToInt32(DockSelector1.SelectedValue));
       if (e.wService)
