@@ -28,7 +28,15 @@ namespace CPRG.Marina.App
         return;
       }
 
+      // Add customer ID to session
       Session.Add("CustomerID", customer.ID);
+
+      // instatiate cookie and add customer ID to cookie
+      HttpCookie cookieCustID = new HttpCookie("CustomerID");
+      cookieCustID.Value = Convert.ToString(customer.ID);
+      cookieCustID.Expires = DateTime.Now.AddMonths(1); // cookie expires after 1 month
+      Response.Cookies.Add(cookieCustID);
+
       FormsAuthentication.RedirectFromLoginPage(customer.FullName, false);
     }
   }

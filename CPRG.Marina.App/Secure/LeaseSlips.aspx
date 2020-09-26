@@ -29,5 +29,33 @@
   <p>  Select Slip: <asp:DropDownList ID="uxSlips" runat="server" Width="302px">  </asp:DropDownList></p>
 
 
-  <br />
+    <asp:Button ID="uxLease" runat="server" Text="Lease Slip" OnClick="uxLease_Click" />
+    <br />
+      <br />
+  <h3>Your Leased Slips</h3>
+    <asp:GridView ID="uxLeaseGrid" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="uxLeaseSource" ForeColor="#333333" GridLines="None" Width="205px">
+      <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+      <Columns>
+        <asp:BoundField DataField="LeaseID" HeaderText="LeaseID" SortExpression="LeaseID" />
+        <asp:BoundField DataField="SlipID" HeaderText="SlipID" SortExpression="SlipID" />
+      </Columns>
+      <EditRowStyle BackColor="#999999" />
+      <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+      <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+      <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+      <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+      <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+      <SortedAscendingCellStyle BackColor="#E9E7E2" />
+      <SortedAscendingHeaderStyle BackColor="#506C8C" />
+      <SortedDescendingCellStyle BackColor="#FFFDF8" />
+      <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+    </asp:GridView>
+    <br />
+    <asp:Label ID="uxMessage" runat="server"></asp:Label>
+    <br />
+    <asp:ObjectDataSource ID="uxLeaseSource" runat="server" OnSelecting="uxLeaseSource_Selecting" SelectMethod="GetLeasesByCustomer" TypeName="CPRG214.Marina.Data.MarinaManager">
+      <SelectParameters>
+        <asp:Parameter Name="custID" Type="Int32" />
+      </SelectParameters>
+    </asp:ObjectDataSource>
 </asp:Content>

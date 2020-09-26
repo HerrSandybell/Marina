@@ -62,6 +62,7 @@
     <Compile Include="Lease.cs">
       <DependentUpon>Marina.tt</DependentUpon>
     </Compile>
+    <Compile Include="LeaseDTO.cs" />
     <Compile Include="Marina.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

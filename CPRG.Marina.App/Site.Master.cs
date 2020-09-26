@@ -30,6 +30,11 @@ namespace CPRG.Marina.App
         uxRegistration.HRef = "/Registration";
         uxLeaseSlip.Attributes["class"] = "nav-link disabled";
         uxLeaseSlip.Attributes["aria-disabled"] = "true";
+
+        // empty cookie
+        HttpCookie httpcookieCustID = new HttpCookie("CustomerID");
+        httpcookieCustID.Expires = DateTime.Now.AddSeconds(-1);
+        Response.Cookies.Add(httpcookieCustID);
       }
     }
     protected void HandleLoginClick(object sender, EventArgs e)

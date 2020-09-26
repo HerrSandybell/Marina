@@ -1,4 +1,5 @@
 ﻿using CPRG214.Marina.Data;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,11 @@ namespace CPRG.Marina.App.Controls
     {
       get { return uxDocks.AutoPostBack; }
       set { uxDocks.AutoPostBack = value; }
+    }
+    public string SelectedDockID
+    {
+      get { return uxDocks.SelectedValue; }
+      set { uxDocks.SelectedValue = value; }
     }
 
     protected void Page_Load(object sender, EventArgs e)
@@ -59,6 +65,10 @@ namespace CPRG.Marina.App.Controls
         // pass args to event and invoke
         DockSelect.Invoke(this, arg);
       }
+    }
+
+    internal class SelectedValue
+    {
     }
   }
 }

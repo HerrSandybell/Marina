@@ -13,24 +13,10 @@ namespace CPRG214.Marina.Data
     {
       using (var db = new MarinaEntities())
       {
-        //var slips2 = (from s in db.Slips
-        //              where !(from l in db.Leases
-        //                      select l.SlipID)
-        //                      .Contains(s.ID)
-        //              select s);
-
-        //// SELECT * FROM Slip WHERE slip.ID NOT IN (SELECT SlipID FROM Lease)
-        //var slips = (from s in slips2
-        //             where s.DockID == dockID
-        //             select new SlipDTO
-        //             {
-        //               ID = s.ID,
-        //               Length = s.Length.ToString(),
-        //               Width = s.Width.ToString(),
-        //               Summary = $"ID: {s.ID} | Dimensions {s.Length}x{s.Width}"
-        //             }).ToList();
+        // Get all non-leased slips.
         var availableSlips = db.Slips.Where(s => s.Leases.Count == 0 && s.DockID == dockID).ToList();
 
+        // Assign values to DTO.
         List<SlipDTO> dto = (from s in availableSlips
                    select new SlipDTO
                    {
@@ -46,17 +32,7 @@ namespace CPRG214.Marina.Data
 
     public List<DockDTO> GetDocks()
     {
-      //using (var db = new MarinaEntities())
-      //{
-      //  var docks = db.Docks.Select(d => new DockDTO
-      //  {
-      //    ID = d.ID,
-      //    Name = d.Name,
-      //    WaterService = d.WaterService,
-      //    ElectricalService = d.ElectricalService
-      //  }).ToList();
-      //  return docks;
-      //}
+      // get all docks.
       using (var db = new MarinaEntities())
       {
         var docks = db.Docks.Select(d => new DockDTO
@@ -87,6 +63,30 @@ namespace CPRG214.Marina.Data
           };
         }
         return dto;
+      }
+    }
+
+    public List<LeaseDTO> GetLeasesByCustomer(int custID)
+    {
+      using (var db = new MarinaEntities())
+      {
+        var leases = (from l in db.Leases
+                      where l.CustomerID == custID
+                      select new LeaseDTO
+                      {
+                        LeaseID = l.ID,
+                        SlipID = l.SlipID
+                      }).ToList();
+        return leases;
+      }
+    }
+
+    public void LeaseSlip(Lease newLease)
+    {
+      using (var db = new MarinaEntities())
+      {
+        db.Leases.Add(newLease);
+        db.SaveChanges();
       }
     }
   }
