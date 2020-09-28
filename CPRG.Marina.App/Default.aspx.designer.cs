@@ -13,5 +13,23 @@ namespace CPRG.Marina.App
 
   public partial class _Default
   {
+
+    /// <summary>
+    /// uxPrimary control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlAnchor uxPrimary;
+
+    /// <summary>
+    /// uxSecondary control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlAnchor uxSecondary;
   }
 }

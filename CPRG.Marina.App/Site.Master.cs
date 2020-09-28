@@ -21,8 +21,9 @@ namespace CPRG.Marina.App
         uxRegistration.HRef = "/Secure/UpdateCustomer";
         uxLeaseSlip.Attributes["class"] = "nav-link";
         uxLeaseSlip.Attributes["aria-disabled"] = "false";
+
       }
-      else
+      else // if not authenticated
       {
         uxWelcome.InnerText = string.Empty;
         uxLogin.InnerHtml = "Sign In";
@@ -31,7 +32,7 @@ namespace CPRG.Marina.App
         uxLeaseSlip.Attributes["class"] = "nav-link disabled";
         uxLeaseSlip.Attributes["aria-disabled"] = "true";
 
-        // empty cookie
+        // empty cookie if client accessing the site is not authenticated. Since redirection occures here after sign out, it happens then automatically.
         HttpCookie httpcookieCustID = new HttpCookie("CustomerID");
         httpcookieCustID.Expires = DateTime.Now.AddSeconds(-1);
         Response.Cookies.Add(httpcookieCustID);

@@ -1,7 +1,6 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+
 }
 
 /* Wrapping element */
@@ -30,10 +29,26 @@ textarea {
     }
 }
 
-.navbar-dark, .bg-dark {
-  background: dodgerblue;
+#navbar {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.navbar-light {
+#hero-section {
+  background-image: url("/Images/boat.jpg");
+  background-position: left;
+  background-size: cover;
   color: white;
+}
+
+#banner {
+  padding: 0;
+  height: 100%;
+  max-height: 50px;
+}
+
+@media (max-width: 500px) {
+  #banner {
+    display: none;
+  }
 }
